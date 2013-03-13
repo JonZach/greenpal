@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+
+    <!-- top navigation bar -->
+
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div id="main-nav"></div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <!-- Homeowner Section to enter Vendor Code -->
+    <div class="container">
+      <div class="hero-unit">
+        <div class="row">
+          <div class="span4">
+            <h2>Have A Vendor in Mind?</h2>
+          </div>
+          <div class="span6">
+            <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+            <a href="" class="btn btn-primary btn-large" id="pickVendor">Scedule Today <b>&rarr;</b></a>
+          </div>
+        </div>
+      </div>           
+    </div> 
+
+    <!-- Vendor Section to enter business info -->
+    <div class="container">
+      <div class="hero-unit">
+        <div class="row">
+          <div class="span4">
+            <h2>Become A <img src="images/gplogo.jpg"> Vendor Today</h2>
+          </div>
+          <div class="span6">
+            <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+            <a href="#createVendor" type="button" role="button" class="btn btn-primary btn-large" id="vendorSignup" data-target="#createVendor" data-toggle="modal">Sign Up Today <b>&rarr;</b></a>
+          </div>
+        </div>
+      </div>
+      <!-- createVendor modal -->
+      <div id="createVendor" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3><img src="images/gplogo.jpg"> Vendor Application</h3>
+        </div>
+        <div class="modal-body">
+          <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
+            <div class="control-group">
+              <label class="control-label" for="business_name">Business Name</label>
+              <div class="controls">
+                <input type="text" class="vendor_inputs" id="businessName" name="businessName" placeholder="Peachtree Lawncare">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="first_name">First Name</label>
+              <div class="controls">
+                <input type="text" class="vendor_inputs" id="firstName" name="firstName" placeholder="John" >
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="last_name">Last Name</label>
+              <div class="controls">
+                <input type="text" class="vendor_inputs" id="lastName" name="lastName" placeholder="Doe">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="phone">Phone Number</label>
+              <div class="controls">
+                <input type="text" id="phoneNumber" class="vendor_inputs" name="phone" placeholder="1234567890">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="email">Email</label>
+              <div class="controls">
+                <input type="text" class="vendor_inputs" id="email" name="email" placeholder="you@email.com">
+              </div>
+            </div>
+          </form>
+        </div>
+          <div class="modal-footer">  
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
+            <button id="addVendor" class="submit btn btn-primary" onclick="return false">Submit</button>    
+          </div>      
+      </div> <!-- end createVendor modal -->      
+    </div>     
+
+  <script>
+    $(document).ready(function(){
+      
+      //===============================================
+      //    Start #addVendor Click Event
+      //===============================================
+
+      $('#addVendor').click(function(){
+        $('#createVendor').modal('hide');
+
+      }) // END #addVendor Click
+     
+
+    }); //end doc.ready
+
+  </script>
+  </body>
+</html>
