@@ -29,11 +29,33 @@
           </div>
           <div class="span6">
             <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
-            <a href="" class="btn btn-primary btn-large" id="pickVendor">Scedule Today <b>&rarr;</b></a>
+            <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Scedule Today <b>&rarr;</b></a>
           </div>
         </div>
-      </div>           
-    </div> 
+      </div>
+      <!--  findVendor modal  -->
+      <div id="findVendor" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3><img src="images/gplogo.jpg"> Search Vendor</h3>
+            <p>Enter your Vendor Code below to go schedule directly with your GreenPal today!</p>
+        </div>
+        <div class="modal-body">
+          <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
+            <div class="control-group">
+              <label class="control-label" for="code">Vendor Code</label>
+              <div class="controls">
+                <input type="text" class="code_inputs" id="code" name="code" placeholder="PeachtreeHendrix">
+              </div>
+            </div>
+          </form>
+        </div>
+          <div class="modal-footer">  
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
+            <button id="findVendorCode" class="submit btn btn-primary" onclick="return false">Submit</button>    
+          </div>      
+      </div> <!-- end createVendor modal -->                     
+    </div> <!-- END Homeowner container -->
 
     <!-- Vendor Section to enter business info -->
     <div class="container">
@@ -93,17 +115,29 @@
             <button id="addVendor" class="submit btn btn-primary" onclick="return false">Submit</button>    
           </div>      
       </div> <!-- end createVendor modal -->      
-    </div>     
+    </div>  <!-- end Vendor container -->   
 
   <script>
     $(document).ready(function(){
       
+      //===============================================
+      //    Start #findVendorCode Click Event
+      //===============================================
+
+      $('#findVendorCode').click(function(){
+        $('#findVendor').modal('hide');
+        //alert($('#lastName').val());
+
+      }) // END #addVendor Click
+
+
       //===============================================
       //    Start #addVendor Click Event
       //===============================================
 
       $('#addVendor').click(function(){
         $('#createVendor').modal('hide');
+        alert($('#lastName').val());
 
       }) // END #addVendor Click
      
