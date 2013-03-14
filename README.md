@@ -1,18 +1,20 @@
-This is a personal capstone project for the front end portion of the Nashville Software School bootcamp.
+<p>This is a personal capstone project for the front end portion of the Nashville Software School bootcamp.</p>
 
-This app will allow vendors to sign up and save their information. Upon sign up a vendor will receive a "Vendor Code" that is automatically generated.
+<p>This app will allow vendors to sign up and save their information. Upon sign up a vendor will receive a "Vendor Code" that is automatically generated.</p>
 
-Homeowners will then be able to enter specific Vendor Codes to schedule service with a particular vendor.
+<p>Homeowners will then be able to enter specific Vendor Codes to schedule service with a particular vendor.</p>
 
-A calendar API will then update the homeowner and vendor's schedules respectively.
+<p>A calendar API will then update the homeowner and vendor's schedules respectively.</p>
 
-<!-- ----- Backlift is used for the backend funtionality ----- -->
+<p> ------- Backlift is used for the backend funtionality ------- </p>
 
-This app will include:
-HTML5
-CSS
-Javascript and jQuery
-JSON
-Ajax
-Calendar API integration
-Bootstrap
+<p>This app will include:</p>
+<ul>
+<li>HTML5</li>
+<li>CSS</li>
+<li>Javascript and jQuery</li>
+<li>JSON</li>
+<li>Ajax</li>
+<li>Calendar API integration</li>
+<li>Bootstrap</li>
+</ul>
