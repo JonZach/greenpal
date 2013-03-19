@@ -20,105 +20,127 @@
     </div>
 
     <!-- content -->
-    <!-- Homeowner Section to enter Vendor Code -->
-    <div class="container">
-      <div class="hero-unit">
-        <div class="row">
-          <div class="span4">
-            <h2>Have A Vendor in Mind?</h2>
-          </div>
-          <div class="span6">
-            <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
-            <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Scedule Today <b>&rarr;</b></a>
-          </div>
+    <!-- Start Accordion -->
+    <div class="accordion" id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle btn-primary btn-large" type="button" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" id="homeownerOption"><img src="images/home.png"> HOMEOWNERS</a>
         </div>
-      </div>
-      <!--  findVendor modal  -->
-      <div id="findVendor" class="modal hide fade">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3><img src="images/gplogo.jpg"> Search Vendor</h3>
-            <p>Enter your Vendor Code below to go schedule directly with your GreenPal today!</p>
-        </div>
-        <div class="modal-body">
-          <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
-            <div class="control-group">
-              <label class="control-label" for="code">Vendor Code</label>
-              <div class="controls">
-                <input type="text" class="code_inputs" id="code" name="code" placeholder="PeachtreeHendrix">
+        <div id="collapseOne" class="accordion-body collapse">
+          <div class="accordion-inner" id="homeExpand">
+            <!-- Homeowner Section to enter Vendor Code -->
+            <div class="container" id="homeowner">
+              <div class="hero-unit">
+                <div class="row">
+                  <div class="span4">
+                    <h2>Have A Vendor in Mind?</h2>
+                  </div>
+                  <div class="span6">
+                    <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+                    <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Scedule Today <b>&rarr;</b></a>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-          <div class="modal-footer">  
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
-            <button id="findVendorCode" class="submit btn btn-primary" onclick="return false">Submit</button>    
-          </div>      
-      </div> <!-- end createVendor modal -->                     
-    </div> <!-- END Homeowner container -->
-
-    <!-- Vendor Section to enter business info -->
-    <div class="container">
-      <div class="hero-unit">
-        <div class="row">
-          <div class="span4">
-            <h2>Become A <img src="images/gplogo.jpg"> Vendor Today</h2>
-          </div>
-          <div class="span6">
-            <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
-            <a href="#createVendor" type="button" role="button" class="btn btn-primary btn-large" id="vendorSignup" data-target="#createVendor" data-toggle="modal">Sign Up Today <b>&rarr;</b></a>
+              <!--  findVendor modal  -->
+              <div id="findVendor" class="modal hide fade">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3><img src="images/gplogo.jpg"> Search Vendor</h3>
+                    <p>Enter your Vendor Code below to schedule your GreenPal today!</p>
+                </div>
+                <div class="modal-body">
+                  <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
+                    <div class="control-group">
+                      <label class="control-label" for="code">Vendor Code</label>
+                      <div class="controls">
+                        <input type="text" class="code_inputs" id="code" name="code" placeholder="PeachtreeHendrix">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                  <div class="modal-footer">  
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
+                    <button id="findVendorCode" class="submit btn btn-primary" onclick="return false">Submit</button>    
+                  </div>      
+              </div> <!-- end createVendor modal -->                     
+            </div> <!-- END Homeowner container -->
           </div>
         </div>
       </div>
-      <!-- createVendor modal -->
-      <div id="createVendor" class="modal hide fade">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3><img src="images/gplogo.jpg"> Vendor Application</h3>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle btn-primary btn-large" type="button" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" id="vendorOption"><img src="images/leaf.png"> GREENPAL Vendors</a>
         </div>
-        <div class="modal-body">
-          <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
-            <div class="control-group">
-              <label class="control-label" for="business_name">Business Name</label>
-              <div class="controls">
-                <input type="text" class="vendor_inputs" id="businessName" name="businessName" placeholder="Peachtree Lawncare">
+        <div id="collapseTwo" class="accordion-body collapse">
+          <div class="accordion-inner" id="vendorExpand">
+            <!-- Vendor Section to enter business info -->
+            <div class="container" id="vendor">
+              <div class="hero-unit">
+                <div class="row">
+                  <div class="span4">
+                    <h2>Become A <img src="images/gplogo.jpg"> Vendor Today</h2>
+                  </div>
+                  <div class="span6">
+                    <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+                    <a href="#createVendor" type="button" role="button" class="btn btn-primary btn-large" id="vendorSignup" data-target="#createVendor" data-toggle="modal">Sign Up Today <b>&rarr;</b></a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="first_name">First Name</label>
-              <div class="controls">
-                <input type="text" class="vendor_inputs" id="firstName" name="firstName" placeholder="John" >
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="last_name">Last Name</label>
-              <div class="controls">
-                <input type="text" class="vendor_inputs" id="lastName" name="lastName" placeholder="Doe">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="phone">Phone Number</label>
-              <div class="controls">
-                <input type="text" id="phoneNumber" class="vendor_inputs" name="phone" placeholder="1234567890">
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="email">Email</label>
-              <div class="controls">
-                <input type="text" class="vendor_inputs" id="email" name="email" placeholder="you@email.com">
-              </div>
-            </div>
-          </form>
+              <!-- createVendor modal -->
+              <div id="createVendor" class="modal hide fade">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3><img src="images/gplogo.jpg"> Vendor Application</h3>
+                </div>
+                <div class="modal-body">
+                  <form id="modal_form" class="form-horizontal" style="margin-top: 20px;">
+                    <div class="control-group">
+                      <label class="control-label" for="business_name">Business Name</label>
+                      <div class="controls">
+                        <input type="text" class="vendor_inputs" id="businessName" name="businessName" placeholder="Peachtree Lawncare">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="first_name">First Name</label>
+                      <div class="controls">
+                        <input type="text" class="vendor_inputs" id="firstName" name="firstName" placeholder="John" >
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="last_name">Last Name</label>
+                      <div class="controls">
+                        <input type="text" class="vendor_inputs" id="lastName" name="lastName" placeholder="Doe">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="phone">Phone Number</label>
+                      <div class="controls">
+                        <input type="text" id="phoneNumber" class="vendor_inputs" name="phone" placeholder="1234567890">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="email">Email</label>
+                      <div class="controls">
+                        <input type="text" class="vendor_inputs" id="email" name="email" placeholder="you@email.com">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                  <div class="modal-footer">  
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
+                    <button id="addVendor" class="submit btn btn-primary" onclick="return false">Submit</button>    
+                  </div>      
+              </div> <!-- end createVendor modal -->      
+            </div>  <!-- end Vendor container -->   
+          </div>
         </div>
-          <div class="modal-footer">  
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>       
-            <button id="addVendor" class="submit btn btn-primary" onclick="return false">Submit</button>    
-          </div>      
-      </div> <!-- end createVendor modal -->      
-    </div>  <!-- end Vendor container -->   
+      </div>
+    </div> <!-- END Accordion -->
 
   <script>
     $(document).ready(function(){
+
+      var allVendors = [];
       
       //===============================================
       //    Start #findVendorCode Click Event
@@ -136,11 +158,41 @@
       //===============================================
 
       $('#addVendor').click(function(){
+        var vendor = {
+          id: $('#businessName').val() + $('#lastName').val(),
+          businessName: $('#businessName').val(),
+          firstName: $('#firstName').val(),
+          lastName: $('#lastName').val(),
+          phoneNumber: $('#phoneNumber').val(),
+          email: $('#email').val(),
+
+        }; // END vendor variable
+
+        $.ajax({
+          url: "/backliftapp/vendor",
+          type: "POST",
+          dataType: "json",
+          data: vendor,
+          success: function (data){
+            allVendors.push(vendor);
+            console.log(data);
+
+          } //end success
+
+        }) //end ajax Post
+
         $('#createVendor').modal('hide');
-        alert($('#lastName').val());
+        alert('Your Vendor Code is' + ' ' + $('#businessName').val() + $('#lastName').val());
+        clearForm();
+        
 
       }) // END #addVendor Click
-     
+      
+      function clearForm(){
+        $('.vendor_inputs').each(function(){
+          $(this).val('');
+        });
+      }; //end clearForm
 
     }); //end doc.ready
 
