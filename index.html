@@ -137,10 +137,38 @@
       </div>
     </div> <!-- END Accordion -->
 
+    <!--  ourVendors Table  -->
+    <div class="span6">
+      <table id="mytable" class="table">
+        <thead>
+          <tr><th>Business Name</th><th>Vendor Code</th><th>Contact Person</th></tr>
+        </thead>
+        <tbody id="ourVendors">
+        </tbody>
+      </table>
+    </div> <!--   END ourVendors  -->
+
   <script>
     $(document).ready(function(){
 
-      var allVendors = [];
+      var allVendors = new Array ();
+
+      getVendorInfo();
+
+      function getVendorInfo(){
+        $.ajax({
+          url: "/backliftapp/vendor",
+          type: "GET",
+          success: function(data) {
+            console.log(data);
+            $.each(data, function(){
+              $('<tr><td><h4>' + this.businessName + '</h4></td><td>' + this.id + '</td><td>' + this.firstName + '</td></tr>').appendTo('#ourVendors');
+
+            }) // END .each
+          } // END success
+        }) // END ajax GET
+      }; // END getVendorInfo
+
       
       //===============================================
       //    Start #findVendorCode Click Event
@@ -174,7 +202,7 @@
           dataType: "json",
           data: vendor,
           success: function (data){
-            allVendors.push(vendor);
+            allVendors.push(data);
             console.log(data);
 
           } //end success
