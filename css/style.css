@@ -1,3 +1,25 @@
+#homeownerOption, #vendorOption{
+  width: 310px;
+  height: 40px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+#vendorTableHeading{
+  text-align: center;
+  background: #ecf2f9;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#vendorHeadFill{
+  background: #ecf2f9;
+}
+
+
+
 /* fonts --------------------------------------------------------------------*/
 
 @import url(//fonts.googleapis.com/css?family=Lato:400,900);

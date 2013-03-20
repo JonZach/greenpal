@@ -141,6 +141,7 @@
     <div class="span6">
       <table id="mytable" class="table">
         <thead>
+          <tr id="vendorHeadFill"><h4 id="vendorTableHeading">Our Vendors</h4></tr>
           <tr><th>Business Name</th><th>Vendor Code</th><th>Contact Person</th></tr>
         </thead>
         <tbody id="ourVendors">
@@ -162,7 +163,7 @@
           success: function(data) {
             console.log(data);
             $.each(data, function(){
-              $('<tr><td><h4>' + this.businessName + '</h4></td><td>' + this.id + '</td><td>' + this.firstName + '</td></tr>').appendTo('#ourVendors');
+              $('<tr><td>' + this.businessName + '</td><td>' + this.id + '</td><td>' + this.firstName + '</td></tr>').appendTo('#ourVendors');
 
             }) // END .each
           } // END success
@@ -210,10 +211,10 @@
         }) //end ajax Post
 
         $('#createVendor').modal('hide');
-        alert('Your Vendor Code is' + ' ' + $('#businessName').val() + $('#lastName').val());
+        //alert('Your Vendor Code is' + ' ' + $('#businessName').val() + $('#lastName').val());
+          $('<tr><td>' + $('#businessName').val() + '</td><td>' + $('#businessName').val() + $('#lastName').val() + '</td><td>' + $('#firstName').val() + '</td></tr>').appendTo('#ourVendors');
         clearForm();
         
-
       }) // END #addVendor Click
       
       function clearForm(){
