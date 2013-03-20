@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
     <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
   </head>
@@ -33,10 +35,10 @@
               <div class="hero-unit">
                 <div class="row">
                   <div class="span4">
-                    <h2>Have A Vendor in Mind?</h2>
+                    <h2>Pick Your Vendor!</h2>
                   </div>
                   <div class="span6">
-                    <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+                    <h3> Enter a specific Vendor Code to schedule with the GreenPal of your choice.</h3>
                     <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Scedule Today <b>&rarr;</b></a>
                   </div>
                 </div>
@@ -54,6 +56,12 @@
                       <label class="control-label" for="code">Vendor Code</label>
                       <div class="controls">
                         <input type="text" class="code_inputs" id="code" name="code" placeholder="PeachtreeHendrix">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="service_date">Service Date</label>
+                      <div class="controls">
+                        <input type="text" class="code_inputs datepicker" id="datepick" name="datepick" placeholder="click icon to select date">
                       </div>
                     </div>
                   </form>
@@ -81,7 +89,7 @@
                     <h2>Become A <img src="images/gplogo.jpg"> Vendor Today</h2>
                   </div>
                   <div class="span6">
-                    <h3> This multi-page website is brought to you by <a href="https://www.backlift.com">Backlift</a> and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></h3>
+                    <h3>Fill out your basic info and we do the rest!</h3>
                     <a href="#createVendor" type="button" role="button" class="btn btn-primary btn-large" id="vendorSignup" data-target="#createVendor" data-toggle="modal">Sign Up Today <b>&rarr;</b></a>
                   </div>
                 </div>
@@ -216,6 +224,17 @@
         clearForm();
         
       }) // END #addVendor Click
+
+      //*************************************
+      //    START Datepicker PlugIn
+      //*************************************
+      $(function() {
+        $( ".datepicker" ).datepicker({
+          showOn: "button",
+          buttonImage: "images/calendar.png",
+          buttonImageOnly: true
+        });
+      }); // END Datepicker
       
       function clearForm(){
         $('.vendor_inputs').each(function(){

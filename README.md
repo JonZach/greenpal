@@ -7,6 +7,7 @@
 <p>A calendar API will then update the homeowner and vendor's schedules respectively.</p>
 
 <p> ------- Backlift is used for the backend funtionality ------- </p>
+<p> ------- URL w/stored JSON objects and Ajax is https://greenpal-k09ky.backliftapp.com/ ------- </p>
 
 <p>This app will include:</p>
 <ul>
