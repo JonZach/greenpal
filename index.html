@@ -5,9 +5,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fullcalendar.css">
     <link href="css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
   </head>
@@ -39,7 +41,7 @@
                   </div>
                   <div class="span6">
                     <h3> Enter a specific Vendor Code to schedule with the GreenPal of your choice.</h3>
-                    <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Scedule Today <b>&rarr;</b></a>
+                    <a href="#findVendor" type="button" role="button" class="btn btn-primary btn-large" id="pickVendor" data-target="#findVendor" data-toggle="modal">Schedule Today <b>&rarr;</b></a>
                   </div>
                 </div>
               </div>
@@ -62,6 +64,12 @@
                       <label class="control-label" for="service_date">Service Date</label>
                       <div class="controls">
                         <input type="text" class="code_inputs datepicker" id="datepick" name="datepick" placeholder="click icon to select date">
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="home_address">Home Address</label>
+                      <div class="controls">
+                        <input type="text" class="code_inputs" id="homeAddress" name="homeAddress" placeholder="Enter Street and Zip Code">
                       </div>
                     </div>
                   </form>
@@ -157,11 +165,25 @@
       </table>
     </div> <!--   END ourVendors  -->
 
+    <!--  apptSchedule calendar   -->
+    <div class="span6">
+      <div class="calendar" id="apptSchedule"></div>
+    </div>
+
   <script>
     $(document).ready(function(){
 
       var allVendors = new Array ();
 
+     /* $.ajax({
+          type: "DELETE",
+          url: "backliftapp/allJobs/2a636a36-4362-48b3-aa53-f2962dd56b3b", 
+          success: function(data) { 
+             console.log("Deleted!");
+          } //end success function
+      }); //end ajax DELETE */
+
+      //populateCalendar();
       getVendorInfo();
 
       function getVendorInfo(){
@@ -178,20 +200,58 @@
         }) // END ajax GET
       }; // END getVendorInfo
 
+      getAllJobs();
+
+      function getAllJobs(){
+        $.ajax({
+          url: "/backliftapp/allJobs",
+          type: "GET",
+          success: function(data) {
+            console.log(data);
+          }
+        })
+      };
+
+
       
       //===============================================
-      //    Start #findVendorCode Click Event
+      //    START #findVendorCode Click Event
       //===============================================
-
+      
+      
       $('#findVendorCode').click(function(){
+        var newJob = {
+          title: $('#code').val(),
+          start: $('#datepick').val(),
+          homeAddress: $('#homeAddress').val(),
+        }; //END newJob variable
+
+        $.ajax({
+          url: "/backliftapp/allJobs",
+          type: "POST",
+          dataType: "json",
+          data: newJob,
+          success: function (data){
+            console.log(data);
+          }// END success
+        }); //END Ajax
         $('#findVendor').modal('hide');
-        //alert($('#lastName').val());
+          addToCalendar();
+          clearForm();
+      }); // END #addVendor Click
 
-      }) // END #addVendor Click
-
-
+      function addToCalendar(){
+        var jobDate = $('#datepick').val();
+        if (jobDate === $('.fc-widget-content').data('date')){
+          alert("You have a new appt!");
+        }
+        else {
+          //alert(jobDate);
+          alert($('.fc-widget-content').data('date'));
+        }
+      };
       //===============================================
-      //    Start #addVendor Click Event
+      //    START #addVendor Click Event
       //===============================================
 
       $('#addVendor').click(function(){
@@ -225,19 +285,34 @@
         
       }) // END #addVendor Click
 
-      //*************************************
+      //==============================================
       //    START Datepicker PlugIn
-      //*************************************
+      //==============================================
+
+
       $(function() {
         $( ".datepicker" ).datepicker({
           showOn: "button",
           buttonImage: "images/calendar.png",
           buttonImageOnly: true
         });
+        //$.datepicker.formatDate("yy-mm-dd", new Date(2007,1 - 1,14));
       }); // END Datepicker
+
+
+
+      //==============================================
+      //  START fullCalendar plugin
+      //==============================================
+      $('.calendar').fullCalendar({
+        // put your options and callbacks here
+      }) //END fullCalendar
       
       function clearForm(){
         $('.vendor_inputs').each(function(){
+          $(this).val('');
+        });
+        $('.code_inputs').each(function(){
           $(this).val('');
         });
       }; //end clearForm
