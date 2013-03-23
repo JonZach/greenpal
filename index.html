@@ -216,7 +216,12 @@
                 eventSources: [
                     '/backliftapp/allJobs',
                     
-                ]
+                ],
+            eventClick: function(event, jsEvent, view) {
+                  $this = $(this);
+                  $this.popover({html:true,title:event.title,content:'Appointment Location:<br>' + event.homeAddress + '<br>Appointment Date:<br>' + event.start,placement:'top'}).popover('toggle');
+                  return false;            
+              }, //end popover
             });
           }
         })
