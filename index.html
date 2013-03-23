@@ -169,6 +169,10 @@
     <div class="span6">
       <div class="calendar" id="apptSchedule"></div>
     </div>
+    <div class="span4">
+      <a class="twitter-timeline" href="https://twitter.com/YourGreenPal" data-widget-id="315218950784950273">Tweets by @YourGreenPal</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
 
   <script>
     $(document).ready(function(){
@@ -208,6 +212,12 @@
           type: "GET",
           success: function(data) {
             console.log(data);
+            $('.calendar').fullCalendar({
+                eventSources: [
+                    '/backliftapp/allJobs',
+                    
+                ]
+            });
           }
         })
       };
@@ -236,6 +246,7 @@
           }// END success
         }); //END Ajax
         $('#findVendor').modal('hide');
+          getAllJobs();
           addToCalendar();
           clearForm();
       }); // END #addVendor Click
@@ -296,7 +307,6 @@
           buttonImage: "images/calendar.png",
           buttonImageOnly: true
         });
-        //$.datepicker.formatDate("yy-mm-dd", new Date(2007,1 - 1,14));
       }); // END Datepicker
 
 
@@ -304,9 +314,9 @@
       //==============================================
       //  START fullCalendar plugin
       //==============================================
-      $('.calendar').fullCalendar({
+     // $('.calendar').fullCalendar({
         // put your options and callbacks here
-      }) //END fullCalendar
+    //  }) //END fullCalendar
       
       function clearForm(){
         $('.vendor_inputs').each(function(){
