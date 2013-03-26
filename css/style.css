@@ -18,6 +18,10 @@
   background: #ecf2f9;
 }
 
+#googleMap, #twitterBox{
+  margin-top: 10px;
+}
+
 
 
 /* fonts --------------------------------------------------------------------*/
