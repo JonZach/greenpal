@@ -17,12 +17,39 @@
       function initialize()
       {
       var mapProp = {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
+        center:new google.maps.LatLng(35.845621,-86.39027),
+        zoom:10,
         mapTypeId:google.maps.MapTypeId.ROADMAP
         };
       var map=new google.maps.Map(document.getElementById("googleMap")
         ,mapProp);
+      
+
+      var myLatlng1 = new google.maps.LatLng(35.892381,-86.392617);
+      var appt1 = new google.maps.Marker({
+      position: myLatlng1,
+      map: map,
+      title:"418 Estes St, 37130"
+        });
+      var myLatlng2 = new google.maps.LatLng(35.893633,-86.392842);
+      var appt2 = new google.maps.Marker({
+      position: myLatlng2,
+      map: map,
+      title:"610 Richard Rd, 37129"
+        });
+      var myLatlng3 = new google.maps.LatLng(35.880246,-86.359343);
+      var appt3 = new google.maps.Marker({
+      position: myLatlng3,
+      map: map,
+      title:"1542 Avelino Circle, 37130"
+        });
+      var myLatlng4 = new google.maps.LatLng(35.863383,-86.341388);
+      var appt4 = new google.maps.Marker({
+      position: myLatlng4,
+      map: map,
+      title:"1119 Eastwoods Dr, 37130"
+        });
+      
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);
